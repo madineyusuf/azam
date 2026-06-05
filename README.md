@@ -2,7 +2,7 @@
 # NoteApp - Güvenlik Açığı Analizi ve Düzeltme
 **Hazırlayan: Madina Yusupova - 24360859922**
 
-| # | Güvenlik Açığı | Hangi dosyalar? | Açıklama | Neler değişmeli? |
+| No | Güvenlik Açığı | Hangi dosyalar? | Açıklama | Neler değişmeli? |
 | :--- | :--- | :--- | :--- | :--- |
 | **1** | **Zayıf Şifre Hashleme**  | `install.php`, `login.php`, `register.php` | Şifreler sadece ilk 5 karakteri alınarak tuzsuz SHA-256 ile güvensiz şekilde özetleniyordu | Budama işlemi kaldırılıp PHP'nin güvenli `password_hash(BCRYPT)` ve `password_verify()` fonksiyonları entegre edilmeli |
 | **2** | **Çerez Tabanlı Kimlik Doğrulama**  | `index.php`, `addnote.php`, `editnote.php`, `login.php` | Kullanıcı oturumu sadece tarayıcıdaki güvensiz bir çerez değerine (kullanıcı ID'sine) dayandırılıyordu | Çerez tabanlı doğrulama tamamen kaldırılarak sunucu taraflı güvenli PHP `$_SESSION` mekanizmasına geçilmeli|
